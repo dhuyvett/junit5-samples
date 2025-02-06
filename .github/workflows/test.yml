@@ -34,3 +34,4 @@ jobs:
           if: success() || failure()
           with:
             report_paths: junit5-jupiter-starter-maven/target/surefire-reports/*.xml
+            annotate_only: true
