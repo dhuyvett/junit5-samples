@@ -28,3 +28,9 @@ jobs:
           run: mvn --batch-mode test
           env:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        - name: Parse test report
+          id: parse-test-report
+          uses: mikepenz/action-junit-report@ee6b445351cd81e2f73a16a0e52d598aeac2197f
+          if: success() || failure()
+          with:
+            report_paths: junit5-jupiter-starter-maven/target/surefire-reports/*.xml
