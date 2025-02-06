@@ -33,6 +33,7 @@ jobs:
           uses: actions/upload-artifact@65c4c4a1ddee5b72f698fdd19549f0f0fb45cf08
           if: success() || failure()
           with:
+            name: test-reports
             path: junit5-jupiter-starter-maven/target/surefire-reports/*.xml
             retention-days: 30
 
